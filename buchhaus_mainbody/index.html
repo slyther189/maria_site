@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maria Buchhaus — Malerei & Mischtechnik</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Crimson+Pro:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="header-name">
+        <span class="name-first">Maria</span>
+        <span class="name-last">Buchhaus</span>
+      </a>
+      <nav class="header-nav">
+        <a href="index.html" class="nav-link active">Galerie</a>
+        <a href="ueber-mich.html" class="nav-link">Über mich</a>
+        <a href="kontakt.html" class="nav-link">Kontakt</a>
+      </nav>
+    </div>
+    <div class="header-rule"></div>
+  </header>
+
+  <!-- MAIN LAYOUT -->
+  <main class="main-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+      <div class="sidebar-inner">
+
+        <!-- Search -->
+        <div class="filter-group search-group">
+          <input 
+            type="text" 
+            id="search-input" 
+            class="search-input" 
+            placeholder="Suche…"
+            autocomplete="off"
+          >
+        </div>
+
+        <div class="sidebar-divider"></div>
+
+        <!-- Motiv -->
+        <div class="filter-group" id="filter-motiv">
+          <button class="filter-group-header" aria-expanded="false" data-target="motiv-pills">
+            <span>Motiv</span>
+            <span class="filter-chevron">&#8964;</span>
+          </button>
+          <div class="filter-pills collapsed" id="motiv-pills"></div>
+        </div>
+
+        <div class="sidebar-divider"></div>
+
+        <!-- Technik -->
+        <div class="filter-group" id="filter-technik">
+          <button class="filter-group-header" aria-expanded="false" data-target="technik-pills">
+            <span>Technik</span>
+            <span class="filter-chevron">&#8964;</span>
+          </button>
+          <div class="filter-pills collapsed" id="technik-pills"></div>
+        </div>
+
+        <div class="sidebar-divider"></div>
+
+        <!-- Stimmung -->
+        <div class="filter-group" id="filter-stimmung">
+          <button class="filter-group-header" aria-expanded="false" data-target="stimmung-pills">
+            <span>Stimmung</span>
+            <span class="filter-chevron">&#8964;</span>
+          </button>
+          <div class="filter-pills collapsed" id="stimmung-pills"></div>
+        </div>
+
+        <div class="sidebar-divider"></div>
+
+        <!-- Farbe -->
+        <div class="filter-group" id="filter-farbe">
+          <button class="filter-group-header" aria-expanded="false" data-target="farbe-pills">
+            <span>Farbe</span>
+            <span class="filter-chevron">&#8964;</span>
+          </button>
+          <div class="filter-pills collapsed" id="farbe-pills"></div>
+        </div>
+
+        <div class="sidebar-divider"></div>
+
+        <!-- Reset -->
+        <button class="reset-btn" id="reset-btn">Filter zurücksetzen</button>
+
+      </div>
+    </aside>
+
+    <!-- GALLERY -->
+    <section class="gallery-section">
+      <div class="gallery-meta">
+        <span id="result-count" class="result-count"></span>
+      </div>
+      <div class="gallery-grid" id="gallery-grid"></div>
+      <div class="no-results" id="no-results" style="display:none;">
+        <p>Keine Werke gefunden.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" aria-modal="true" role="dialog" aria-label="Werkansicht">
+    <button class="lightbox-close" id="lightbox-close" aria-label="Schließen">&times;</button>
+    <button class="lightbox-prev" id="lightbox-prev" aria-label="Vorheriges Werk">&#8592;</button>
+    <button class="lightbox-next" id="lightbox-next" aria-label="Nächstes Werk">&#8594;</button>
+    <div class="lightbox-inner">
+      <div class="lightbox-image-wrap">
+        <img class="lightbox-img" id="lightbox-img" src="" alt="">
+      </div>
+      <div class="lightbox-info">
+        <p class="lightbox-id" id="lightbox-id"></p>
+        <p class="lightbox-desc" id="lightbox-desc"></p>
+        <div class="lightbox-tags" id="lightbox-tags"></div>
+      </div>
+    </div>
+  </div>
+  <div class="lightbox-overlay" id="lightbox-overlay"></div>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span>&copy; <span id="footer-year"></span> Maria Buchhaus</span>
+      <span class="footer-sep">—</span>
+      <a href="kontakt.html" class="footer-link">Kontakt</a>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/gallery.js"></script>
+</body>
+</html>
