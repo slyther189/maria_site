@@ -14,8 +14,6 @@
   const activeFilters = {
     motiv:    new Set(),
     technik:  new Set(),
-    stimmung: new Set(),
-    farbe:    new Set(),
   };
   let searchQuery = '';
 
@@ -35,6 +33,10 @@
   const lightboxClose   = document.getElementById('lightbox-close');
   const lightboxPrev    = document.getElementById('lightbox-prev');
   const lightboxNext    = document.getElementById('lightbox-next');
+
+  const shareWhatsapp   = document.getElementById('share-whatsapp');
+  const shareFacebook   = document.getElementById('share-facebook');
+  const shareCopy       = document.getElementById('share-copy');
 
   // ── Boot ───────────────────────────────────
   function init() {
@@ -58,11 +60,29 @@
     buildFilterPills();
     applyFilters();
     bindEvents();
+    openFromHash();
+  }
+
+  // ── Deep-linking (share links open straight to a painting) ──
+  function openFromHash() {
+    const match = location.hash.match(/^#werk-(\d+)/);
+    if (!match) return;
+    const id = parseInt(match[1], 10);
+    const idx = filtered.findIndex(p => p.id === id);
+    if (idx > -1) openLightbox(idx);
+  }
+
+  function setHashForPainting(p) {
+    history.replaceState(null, '', `#werk-${p.id}`);
+  }
+
+  function clearHash() {
+    history.replaceState(null, '', location.pathname + location.search);
   }
 
   // ── Build sidebar pills ────────────────────
   function buildFilterPills() {
-    const categories = ['motiv', 'technik', 'stimmung', 'farbe'];
+    const categories = ['motiv', 'technik'];
     categories.forEach(cat => {
       const fieldDe = `${cat}_de`;
       const counts  = {};
@@ -111,17 +131,13 @@
   (p.motiv_en    || []).join(' '),
   (p.technik_de  || []).join(' '),
   (p.technik_en  || []).join(' '),
-  (p.stimmung_de || []).join(' '),
-  (p.stimmung_en || []).join(' '),
-  (p.farbe_de    || []).join(' '),
-  (p.farbe_en    || []).join(' '),
   p.titel || '',
 ].join(' ').toLowerCase();
         if (!searchable.includes(q)) return false;
       }
 
       // Each active filter category must have at least one matching tag
-      for (const cat of ['motiv', 'technik', 'stimmung', 'farbe']) {
+      for (const cat of ['motiv', 'technik']) {
         if (activeFilters[cat].size === 0) continue;
         const tags = p[`${cat}_de`] || [];
         const hasMatch = [...activeFilters[cat]].some(f => tags.includes(f));
@@ -133,6 +149,31 @@
 
     renderGrid();
     updateCount();
+  }
+
+  // ── Adaptive card aspect ratio (fixes portrait crop) ──
+  // Cards default to a 4:3 box (see CSS) so the grid looks tidy before
+  // images load. Once a thumbnail loads, we read its real width/height
+  // and resize its box to match — so portrait photos get a portrait-
+  // shaped box instead of being cropped into a landscape hole.
+  // Clamped to a sane range so one extreme panorama or a very tall
+  // sliver of a photo can't blow out the grid's row heights.
+  const MIN_ASPECT = 0.62; // tallest allowed box (~5:8)
+  const MAX_ASPECT = 1.6;  // widest allowed box (~8:5)
+
+  function applyNaturalAspect(img, wrap) {
+    if (!img.naturalWidth || !img.naturalHeight) return;
+    const ratio = img.naturalWidth / img.naturalHeight;
+    const clamped = Math.min(MAX_ASPECT, Math.max(MIN_ASPECT, ratio));
+    wrap.style.aspectRatio = String(clamped);
+  }
+
+  function setupAdaptiveAspect(img, wrap) {
+    if (img.complete) {
+      applyNaturalAspect(img, wrap);
+    } else {
+      img.addEventListener('load', () => applyNaturalAspect(img, wrap), { once: true });
+    }
   }
 
   // ── Render ─────────────────────────────────
@@ -152,9 +193,10 @@
         <div class="card-image-wrap">
           <img 
             class="card-img" 
-            src="images/${p.dateiname}" 
+            src="images-thumb/${p.dateiname}" 
             alt="${p.titel || 'Werk Nr. ' + p.id}"
             loading="lazy"
+            onerror="this.onerror=null;this.src='images/${p.dateiname}';"
           >
           <div class="card-overlay">
             <div class="card-zoom-icon">&#43;</div>
@@ -166,6 +208,8 @@
       `;
       card.addEventListener('click', () => openLightbox(i));
       grid.appendChild(card);
+
+      setupAdaptiveAspect(card.querySelector('.card-img'), card.querySelector('.card-image-wrap'));
     });
   }
 
@@ -192,6 +236,7 @@
     lightbox.classList.remove('open');
     lightboxOverlay.classList.remove('open');
     document.body.style.overflow = '';
+    clearHash();
   }
 
   function showLightboxItem() {
@@ -202,12 +247,12 @@
     lightboxImg.alt = p.titel || `Werk Nr. ${p.id}`;
     lightboxId.textContent = `Werk Nr. ${p.id}${p.titel ? ' — ' + p.titel : ''}`;
     lightboxDesc.textContent = p.beschreibung_de || '';
+    setHashForPainting(p);
 
     // Tags
     lightboxTags.innerHTML = '';
     const allTags = [
-      ...(p.technik_de  || []),
-      ...(p.stimmung_de || []),
+      ...(p.technik_de || []),
     ];
     allTags.slice(0, 8).forEach(tag => {
       const span = document.createElement('span');
@@ -219,6 +264,40 @@
     // Prev/next visibility
     lightboxPrev.style.opacity = lightboxIndex > 0 ? '1' : '0.2';
     lightboxNext.style.opacity = lightboxIndex < filtered.length - 1 ? '1' : '0.2';
+  }
+
+  // ── Sharing ────────────────────────────────
+  function buildShareUrl(p) {
+    return `${location.origin}${location.pathname}#werk-${p.id}`;
+  }
+
+  function buildShareText(p) {
+    const title = p.titel || `Werk Nr. ${p.id}`;
+    const desc  = p.beschreibung_de || '';
+    return [title, desc].filter(Boolean).join('\n\n');
+  }
+
+  function copyToClipboard(text) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      return navigator.clipboard.writeText(text);
+    }
+    // Fallback for older browsers
+    return new Promise((resolve, reject) => {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try {
+        document.execCommand('copy');
+        resolve();
+      } catch (err) {
+        reject(err);
+      } finally {
+        document.body.removeChild(ta);
+      }
+    });
   }
 
   // ── Events ─────────────────────────────────
@@ -260,6 +339,48 @@
     lightboxNext.addEventListener('click', e => {
       e.stopPropagation();
       if (lightboxIndex < filtered.length - 1) { lightboxIndex++; showLightboxItem(); }
+    });
+
+    // Share buttons
+    shareWhatsapp.addEventListener('click', e => {
+      e.stopPropagation();
+      const p = filtered[lightboxIndex];
+      if (!p) return;
+      const text = `${buildShareText(p)}\n\n${buildShareUrl(p)}`;
+      window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank');
+    });
+
+    shareFacebook.addEventListener('click', e => {
+      e.stopPropagation();
+      const p = filtered[lightboxIndex];
+      if (!p) return;
+      const url = buildShareUrl(p);
+      window.open(
+        `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`,
+        '_blank',
+        'width=600,height=520'
+      );
+    });
+
+    shareCopy.addEventListener('click', e => {
+      e.stopPropagation();
+      const p = filtered[lightboxIndex];
+      if (!p) return;
+      const text = `${buildShareText(p)}\n\n${buildShareUrl(p)}`;
+      const label = shareCopy.querySelector('.share-btn-label');
+      const originalLabel = label.textContent;
+      copyToClipboard(text)
+        .then(() => {
+          shareCopy.classList.add('copied');
+          label.textContent = 'Kopiert ✓';
+          setTimeout(() => {
+            shareCopy.classList.remove('copied');
+            label.textContent = originalLabel;
+          }, 1800);
+        })
+        .catch(() => {
+          alert('Der Link konnte nicht automatisch kopiert werden. Bitte manuell kopieren:\n\n' + text);
+        });
     });
 
     // Keyboard
