@@ -4,6 +4,8 @@
    PAINTINGS (111): all publicly visible works.
    Schema per entry:
      id, dateiname, titel,
+     groesse — physical size, on-site tape measurement, "ca. H x W cm"
+       ("ca." since hand measurements carry a small margin of error)
      motiv_de / motiv_en   — category tags, restricted to the fixed set:
          Landschaft/Landscape, Natur/Nature, Stadt/City, Menschen/People,
          Akte/Nudes, Blumen/Flowers, Abstrakt/Abstrakt, Sonstiges/Others
@@ -23,6 +25,7 @@ const PAINTINGS = [
     "id": 1,
     "dateiname": "IMG_7921.jpeg",
     "titel": "Familie",
+    "groesse": "ca. 81 x 61 cm",
     "motiv_de": [
       "Menschen",
       "Abstrakt"
@@ -45,6 +48,7 @@ const PAINTINGS = [
     "id": 2,
     "dateiname": "IMG_7924.jpeg",
     "titel": "Explosiv",
+    "groesse": "ca. 83 x 62.5 cm",
     "motiv_de": [
       "Menschen",
       "Abstrakt"
@@ -69,6 +73,7 @@ const PAINTINGS = [
     "id": 3,
     "dateiname": "IMG_7927.jpeg",
     "titel": "Blauer Baum",
+    "groesse": "ca. 81.5 x 62 cm",
     "motiv_de": [
       "Landschaft",
       "Natur"
@@ -91,6 +96,7 @@ const PAINTINGS = [
     "id": 6,
     "dateiname": "IMG_7939.jpeg",
     "titel": "Spuren",
+    "groesse": "ca. 61 x 81 cm",
     "motiv_de": [
       "Abstrakt"
     ],
@@ -113,6 +119,7 @@ const PAINTINGS = [
     "id": 7,
     "dateiname": "IMG_7944.jpeg",
     "titel": "Mehr Spuren",
+    "groesse": "ca. 80.5 x 60.5 cm",
     "motiv_de": [
       "Abstrakt"
     ],
@@ -133,6 +140,7 @@ const PAINTINGS = [
     "id": 8,
     "dateiname": "IMG_7948.jpeg",
     "titel": "Beschützerin",
+    "groesse": "ca. 80.5 x 60.5 cm",
     "motiv_de": [
       "Menschen",
       "Abstrakt"
@@ -157,6 +165,7 @@ const PAINTINGS = [
     "id": 9,
     "dateiname": "IMG_7949.jpeg",
     "titel": "Steinformation",
+    "groesse": "ca. 81.5 x 61 cm",
     "motiv_de": [
       "Landschaft",
       "Natur"
@@ -181,6 +190,7 @@ const PAINTINGS = [
     "id": 10,
     "dateiname": "IMG_7963.jpeg",
     "titel": "Zerstörter Lebensraum",
+    "groesse": "ca. 83 x 62.5 cm",
     "motiv_de": [
       "Natur"
     ],
@@ -201,6 +211,7 @@ const PAINTINGS = [
     "id": 11,
     "dateiname": "IMG_7968.jpeg",
     "titel": "Menschen in der Stadt",
+    "groesse": "ca. 61 x 81 cm",
     "motiv_de": [
       "Stadt",
       "Menschen"
@@ -225,6 +236,7 @@ const PAINTINGS = [
     "id": 12,
     "dateiname": "IMG_7969.jpeg",
     "titel": "Durchblick",
+    "groesse": "ca. 61 x 81 cm",
     "motiv_de": [
       "Menschen",
       "Abstrakt"
@@ -247,6 +259,7 @@ const PAINTINGS = [
     "id": 13,
     "dateiname": "IMG_7974.jpeg",
     "titel": "Murano 1",
+    "groesse": "ca. 61 x 81 cm",
     "motiv_de": [
       "Stadt",
       "Menschen"
@@ -271,6 +284,7 @@ const PAINTINGS = [
     "id": 14,
     "dateiname": "IMG_7977.jpeg",
     "titel": "im Cafe",
+    "groesse": "ca. 61 x 81 cm",
     "motiv_de": [
       "Menschen"
     ],
@@ -293,6 +307,7 @@ const PAINTINGS = [
     "id": 15,
     "dateiname": "IMG_7985.jpeg",
     "titel": "in der Sauna",
+    "groesse": "ca. 71.5 x 101 cm",
     "motiv_de": [
       "Menschen",
       "Akte"
@@ -317,6 +332,7 @@ const PAINTINGS = [
     "id": 16,
     "dateiname": "IMG_7988.jpeg",
     "titel": "Landschaftsformationen",
+    "groesse": "ca. 61.5 x 81 cm",
     "motiv_de": [
       "Landschaft",
       "Abstrakt"
@@ -339,6 +355,7 @@ const PAINTINGS = [
     "id": 17,
     "dateiname": "IMG_7994.jpeg",
     "titel": "Zerstörte Hoffnung",
+    "groesse": "ca. 61 x 81 cm",
     "motiv_de": [
       "Menschen"
     ],
@@ -361,6 +378,7 @@ const PAINTINGS = [
     "id": 18,
     "dateiname": "IMG_8003.jpeg",
     "titel": "Menage a trois",
+    "groesse": "ca. 82.5 x 62.6 cm",
     "motiv_de": [
       "Menschen"
     ],
@@ -383,6 +401,7 @@ const PAINTINGS = [
     "id": 19,
     "dateiname": "IMG_8010.jpeg",
     "titel": "Abschied nehmen",
+    "groesse": "ca. 81 x 61 cm",
     "motiv_de": [
       "Menschen",
       "Abstrakt"
@@ -405,6 +424,7 @@ const PAINTINGS = [
     "id": 20,
     "dateiname": "IMG_8021.jpeg",
     "titel": "Gesteinsbrocken",
+    "groesse": "ca. 61 x 81 cm",
     "motiv_de": [
       "Landschaft",
       "Natur",
@@ -431,6 +451,7 @@ const PAINTINGS = [
     "id": 21,
     "dateiname": "IMG_8024.jpeg",
     "titel": "Zur Moschee",
+    "groesse": "ca. 81 x 61 cm",
     "motiv_de": [
       "Landschaft",
       "Stadt",
@@ -455,6 +476,7 @@ const PAINTINGS = [
     "id": 22,
     "dateiname": "IMG_8029.jpeg",
     "titel": "Kukuruz",
+    "groesse": "ca. 72 x 52 cm",
     "motiv_de": [
       "Natur",
       "Blumen"
@@ -477,6 +499,7 @@ const PAINTINGS = [
     "id": 23,
     "dateiname": "IMG_8033.jpeg",
     "titel": "kubische Familie",
+    "groesse": "ca. 81 x 61 cm",
     "motiv_de": [
       "Abstrakt"
     ],
@@ -499,6 +522,7 @@ const PAINTINGS = [
     "id": 24,
     "dateiname": "IMG_8036.jpeg",
     "titel": "Komposition in Rot-Schwarz",
+    "groesse": "ca. 81 x 61.5 cm",
     "motiv_de": [
       "Menschen",
       "Abstrakt"
@@ -521,6 +545,7 @@ const PAINTINGS = [
     "id": 25,
     "dateiname": "IMG_8042.jpeg",
     "titel": "Urlaubserinnerungen",
+    "groesse": "ca. 71.5 x 52 cm",
     "motiv_de": [
       "Blumen",
       "Abstrakt"
@@ -543,6 +568,7 @@ const PAINTINGS = [
     "id": 26,
     "dateiname": "IMG_8043.jpeg",
     "titel": "Narzissen",
+    "groesse": "ca. 71 x 51.5 cm",
     "motiv_de": [
       "Blumen"
     ],
@@ -563,6 +589,7 @@ const PAINTINGS = [
     "id": 27,
     "dateiname": "IMG_8051.jpeg",
     "titel": "Zypressen",
+    "groesse": "ca. 70.5 x 51 cm",
     "motiv_de": [
       "Landschaft",
       "Abstrakt"
@@ -587,6 +614,7 @@ const PAINTINGS = [
     "id": 30,
     "dateiname": "IMG_8058.jpeg",
     "titel": "Abbruch",
+    "groesse": "ca. 74 x 54 cm",
     "motiv_de": [
       "Stadt",
       "Menschen"
@@ -609,6 +637,7 @@ const PAINTINGS = [
     "id": 31,
     "dateiname": "IMG_8062.jpeg",
     "titel": "Auferstehung",
+    "groesse": "ca. 54 x 74 cm",
     "motiv_de": [
       "Abstrakt"
     ],
@@ -631,6 +660,7 @@ const PAINTINGS = [
     "id": 32,
     "dateiname": "IMG_8063.jpeg",
     "titel": "Magnolien",
+    "groesse": "ca. 51 x 61 cm",
     "motiv_de": [
       "Blumen"
     ],
@@ -651,6 +681,7 @@ const PAINTINGS = [
     "id": 33,
     "dateiname": "IMG_8075.jpeg",
     "titel": "Sonnenuntergang",
+    "groesse": "ca. 70 x 100 cm",
     "motiv_de": [
       "Landschaft",
       "Natur",
@@ -677,6 +708,7 @@ const PAINTINGS = [
     "id": 34,
     "dateiname": "IMG_8079.jpeg",
     "titel": "Zerstörter Lebensraum 2",
+    "groesse": "ca. 60 x 80 cm",
     "motiv_de": [
       "Natur"
     ],
@@ -699,6 +731,7 @@ const PAINTINGS = [
     "id": 36,
     "dateiname": "IMG_8086.jpeg",
     "titel": "Automatische Welt",
+    "groesse": "ca. 70 x 100 cm",
     "motiv_de": [
       "Sonstiges"
     ],
@@ -721,6 +754,7 @@ const PAINTINGS = [
     "id": 37,
     "dateiname": "IMG_8091.jpeg",
     "titel": "Morgen in den Bergen",
+    "groesse": "ca. 70 x 100 cm",
     "motiv_de": [
       "Landschaft"
     ],
@@ -743,6 +777,7 @@ const PAINTINGS = [
     "id": 39,
     "dateiname": "IMG_8099.jpeg",
     "titel": "Gesellschaft",
+    "groesse": "ca. 75 x 58 cm",
     "motiv_de": [
       "Menschen"
     ],
@@ -765,6 +800,7 @@ const PAINTINGS = [
     "id": 40,
     "dateiname": "IMG_8106.jpeg",
     "titel": "Kakadu",
+    "groesse": "ca. 75 x 58 cm",
     "motiv_de": [
       "Natur"
     ],
@@ -787,6 +823,7 @@ const PAINTINGS = [
     "id": 41,
     "dateiname": "IMG_8110.jpeg",
     "titel": "Kopfzerbrechen",
+    "groesse": "ca. 75 x 58 cm",
     "motiv_de": [
       "Menschen"
     ],
@@ -809,6 +846,7 @@ const PAINTINGS = [
     "id": 42,
     "dateiname": "IMG_8118.jpeg",
     "titel": "Zerstörte Paradiese",
+    "groesse": "ca. 80 x 60 cm",
     "motiv_de": [
       "Natur"
     ],
@@ -829,6 +867,7 @@ const PAINTINGS = [
     "id": 43,
     "dateiname": "IMG_8124.jpeg",
     "titel": "Schaurige Felsen",
+    "groesse": "ca. 60 x 80 cm",
     "motiv_de": [
       "Landschaft",
       "Natur"
@@ -853,6 +892,7 @@ const PAINTINGS = [
     "id": 44,
     "dateiname": "IMG_8129.jpeg",
     "titel": "Aufstieg",
+    "groesse": "ca. 80 x 60 cm",
     "motiv_de": [
       "Landschaft",
       "Natur",
@@ -879,6 +919,7 @@ const PAINTINGS = [
     "id": 45,
     "dateiname": "IMG_8136.jpeg",
     "titel": ",Gegensätze?",
+    "groesse": "ca. 80 x 60 cm",
     "motiv_de": [
       "Landschaft",
       "Stadt",
@@ -905,6 +946,7 @@ const PAINTINGS = [
     "id": 46,
     "dateiname": "IMG_8141.jpeg",
     "titel": "Lanzarote",
+    "groesse": "ca. 60 x 80 cm",
     "motiv_de": [
       "Landschaft",
       "Natur"
@@ -929,6 +971,7 @@ const PAINTINGS = [
     "id": 47,
     "dateiname": "IMG_8146.jpeg",
     "titel": "Steirische Hügellandschaft",
+    "groesse": "ca. 60 x 80 cm",
     "motiv_de": [
       "Landschaft",
       "Stadt",
@@ -955,6 +998,7 @@ const PAINTINGS = [
     "id": 48,
     "dateiname": "IMG_8159.jpeg",
     "titel": "Stoak wia a Fösn (steirisch)",
+    "groesse": "ca. 80 x 60 cm",
     "motiv_de": [
       "Landschaft",
       "Natur"
@@ -979,6 +1023,7 @@ const PAINTINGS = [
     "id": 49,
     "dateiname": "IMG_8164.jpeg",
     "titel": "Geheimnis der Berge",
+    "groesse": "ca. 80 x 60 cm",
     "motiv_de": [
       "Landschaft",
       "Natur"
@@ -1003,6 +1048,7 @@ const PAINTINGS = [
     "id": 50,
     "dateiname": "IMG_8172.jpeg",
     "titel": "Gegensätze?",
+    "groesse": "ca. 80 x 60 cm",
     "motiv_de": [
       "Landschaft",
       "Stadt",
@@ -1029,6 +1075,7 @@ const PAINTINGS = [
     "id": 51,
     "dateiname": "IMG_8173.jpeg",
     "titel": "Verwirrend",
+    "groesse": "ca. 80 x 60 cm",
     "motiv_de": [
       "Menschen",
       "Abstrakt"
@@ -1053,6 +1100,7 @@ const PAINTINGS = [
     "id": 52,
     "dateiname": "IMG_8178.jpeg",
     "titel": "stürmische Familie",
+    "groesse": "ca. 75 x 58 cm",
     "motiv_de": [
       "Menschen"
     ],
@@ -1075,6 +1123,7 @@ const PAINTINGS = [
     "id": 53,
     "dateiname": "IMG_8183.jpeg",
     "titel": "Zugebaut",
+    "groesse": "ca. 60 x 80 cm",
     "motiv_de": [
       "Stadt"
     ],
@@ -1097,6 +1146,7 @@ const PAINTINGS = [
     "id": 54,
     "dateiname": "IMG_8186.jpeg",
     "titel": "Glas voller Steine",
+    "groesse": "ca. 60 x 80 cm",
     "motiv_de": [
       "Abstrakt"
     ],
@@ -1119,6 +1169,7 @@ const PAINTINGS = [
     "id": 55,
     "dateiname": "IMG_8193.jpeg",
     "titel": "Marmor-Steinbruch",
+    "groesse": "ca. 60 x 80 cm",
     "motiv_de": [
       "Landschaft",
       "Natur",
@@ -1145,6 +1196,7 @@ const PAINTINGS = [
     "id": 56,
     "dateiname": "IMG_8197.jpeg",
     "titel": "Zukunft?",
+    "groesse": "ca. 60 x 80 cm",
     "motiv_de": [
       "Stadt",
       "Menschen"
@@ -1169,6 +1221,7 @@ const PAINTINGS = [
     "id": 57,
     "dateiname": "IMG_8200.jpeg",
     "titel": "Die Kürbisfrau",
+    "groesse": "ca. 60 x 80 cm",
     "motiv_de": [
       "Menschen"
     ],
@@ -1191,6 +1244,7 @@ const PAINTINGS = [
     "id": 58,
     "dateiname": "IMG_8205.jpeg",
     "titel": "Neptun",
+    "groesse": "ca. 70 x 100 cm",
     "motiv_de": [
       "Natur",
       "Menschen"
@@ -1215,6 +1269,7 @@ const PAINTINGS = [
     "id": 59,
     "dateiname": "IMG_8206.jpeg",
     "titel": "Rise like a Phoenix",
+    "groesse": "ca. 70 x 100 cm",
     "motiv_de": [
       "Menschen"
     ],
@@ -1237,6 +1292,7 @@ const PAINTINGS = [
     "id": 60,
     "dateiname": "IMG_8210.jpeg",
     "titel": "Lanzarote 2",
+    "groesse": "ca. 70 x 100 cm",
     "motiv_de": [
       "Landschaft",
       "Natur"
@@ -1261,6 +1317,7 @@ const PAINTINGS = [
     "id": 61,
     "dateiname": "IMG_8216.jpeg",
     "titel": "alles Bio",
+    "groesse": "ca. 70 x 100 cm",
     "motiv_de": [
       "Landschaft"
     ],
@@ -1283,6 +1340,7 @@ const PAINTINGS = [
     "id": 64,
     "dateiname": "IMG_8236.jpeg",
     "titel": "Freundinnen",
+    "groesse": "ca. 61 x 81 cm",
     "motiv_de": [
       "Natur",
       "Menschen",
@@ -1309,6 +1367,7 @@ const PAINTINGS = [
     "id": 65,
     "dateiname": "IMG_8238.jpeg",
     "titel": "Liebe",
+    "groesse": "ca. 81 x 61 cm",
     "motiv_de": [
       "Menschen",
       "Akte"
@@ -1331,6 +1390,7 @@ const PAINTINGS = [
     "id": 66,
     "dateiname": "IMG_8243.jpeg",
     "titel": "Komposition mit Kürbis",
+    "groesse": "ca. 81 x 61 cm",
     "motiv_de": [
       "Abstrakt"
     ],
@@ -1353,6 +1413,7 @@ const PAINTINGS = [
     "id": 67,
     "dateiname": "IMG_8246.jpeg",
     "titel": "Cubic Houses",
+    "groesse": "ca. 81 x 61 cm",
     "motiv_de": [
       "Stadt",
       "Abstrakt"
@@ -1377,6 +1438,7 @@ const PAINTINGS = [
     "id": 68,
     "dateiname": "IMG_8252.jpeg",
     "titel": "goldene Stadt",
+    "groesse": "ca. 81 x 61 cm",
     "motiv_de": [
       "Landschaft",
       "Stadt"
@@ -1401,6 +1463,7 @@ const PAINTINGS = [
     "id": 69,
     "dateiname": "IMG_8258.jpeg",
     "titel": "Komposition mit Baum",
+    "groesse": "ca. 81 x 61 cm",
     "motiv_de": [
       "Natur",
       "Stadt",
@@ -1427,6 +1490,7 @@ const PAINTINGS = [
     "id": 70,
     "dateiname": "IMG_8267.jpeg",
     "titel": "altes Bewahren",
+    "groesse": "ca. 81 x 61 cm",
     "motiv_de": [
       "Abstrakt"
     ],
@@ -1449,6 +1513,7 @@ const PAINTINGS = [
     "id": 71,
     "dateiname": "IMG_8270.jpeg",
     "titel": "Strassencafe",
+    "groesse": "ca. 71.5 x 101 cm",
     "motiv_de": [
       "Menschen"
     ],
@@ -1471,6 +1536,7 @@ const PAINTINGS = [
     "id": 72,
     "dateiname": "IMG_8274.jpeg",
     "titel": "Harlekine mit Rose",
+    "groesse": "ca. 61 x 81 cm",
     "motiv_de": [
       "Menschen",
       "Akte"
@@ -1493,6 +1559,7 @@ const PAINTINGS = [
     "id": 73,
     "dateiname": "IMG_8279.jpeg",
     "titel": "Neumarkt",
+    "groesse": "ca. 81.5 x 61.5 cm",
     "motiv_de": [
       "Stadt",
       "Abstrakt"
@@ -1517,6 +1584,7 @@ const PAINTINGS = [
     "id": 75,
     "dateiname": "IMG_8286.jpeg",
     "titel": "Rotschädl",
+    "groesse": "ca. 81 x 61.5 cm",
     "motiv_de": [
       "Menschen"
     ],
@@ -1539,6 +1607,7 @@ const PAINTINGS = [
     "id": 76,
     "dateiname": "IMG_8294.jpeg",
     "titel": "Akt in Brauntönen",
+    "groesse": "ca. 61 x 81 cm",
     "motiv_de": [
       "Menschen",
       "Akte"
@@ -1561,6 +1630,7 @@ const PAINTINGS = [
     "id": 78,
     "dateiname": "IMG_8304.jpeg",
     "titel": "Nachts am See",
+    "groesse": "ca. 51.5 x 71.5 cm",
     "motiv_de": [
       "Natur",
       "Abstrakt"
@@ -1585,6 +1655,7 @@ const PAINTINGS = [
     "id": 80,
     "dateiname": "IMG_8316.jpeg",
     "titel": "Minka immer hungrig",
+    "groesse": "ca. 51 x 41 cm",
     "motiv_de": [
       "Natur",
       "Menschen"
@@ -1607,6 +1678,7 @@ const PAINTINGS = [
     "id": 81,
     "dateiname": "IMG_8322.jpeg",
     "titel": "Primeln",
+    "groesse": "ca. 51 x 61 cm",
     "motiv_de": [
       "Landschaft",
       "Blumen"
@@ -1629,6 +1701,7 @@ const PAINTINGS = [
     "id": 84,
     "dateiname": "IMG_8337.jpeg",
     "titel": "Malfetzen",
+    "groesse": "ca. 61 x 51.5 cm",
     "motiv_de": [
       "Abstrakt"
     ],
@@ -1649,6 +1722,7 @@ const PAINTINGS = [
     "id": 85,
     "dateiname": "IMG_8345.jpeg",
     "titel": "Tulpen",
+    "groesse": "ca. 50.5 x 60.5 cm",
     "motiv_de": [
       "Blumen"
     ],
@@ -1669,6 +1743,7 @@ const PAINTINGS = [
     "id": 86,
     "dateiname": "IMG_8347.jpeg",
     "titel": "Veilchen und Mimosen",
+    "groesse": "ca. 51 x 61 cm",
     "motiv_de": [
       "Blumen"
     ],
@@ -1689,6 +1764,7 @@ const PAINTINGS = [
     "id": 87,
     "dateiname": "IMG_8359.jpeg",
     "titel": "Szene im Park",
+    "groesse": "ca. 60 x 80 cm",
     "motiv_de": [
       "Natur",
       "Menschen"
@@ -1713,6 +1789,7 @@ const PAINTINGS = [
     "id": 88,
     "dateiname": "IMG_8364.jpeg",
     "titel": "Entschlossenheit",
+    "groesse": "ca. 60 x 80 cm",
     "motiv_de": [
       "Menschen",
       "Abstrakt"
@@ -1737,6 +1814,7 @@ const PAINTINGS = [
     "id": 89,
     "dateiname": "IMG_8366.jpeg",
     "titel": "Akt mit rotem Haar",
+    "groesse": "ca. 60 x 80 cm",
     "motiv_de": [
       "Menschen",
       "Akte"
@@ -1761,6 +1839,7 @@ const PAINTINGS = [
     "id": 90,
     "dateiname": "IMG_8371.jpeg",
     "titel": "Auf der anderen Seite",
+    "groesse": "ca. 80 x 60 cm",
     "motiv_de": [
       "Landschaft"
     ],
@@ -1783,6 +1862,7 @@ const PAINTINGS = [
     "id": 91,
     "dateiname": "IMG_8376.jpeg",
     "titel": "Im Reisfeld",
+    "groesse": "ca. 60 x 80 cm",
     "motiv_de": [
       "Landschaft"
     ],
@@ -1805,6 +1885,7 @@ const PAINTINGS = [
     "id": 92,
     "dateiname": "IMG_8381.jpeg",
     "titel": "Monotypie 31",
+    "groesse": "ca. 70.5 x 51 cm",
     "motiv_de": [
       "Abstrakt"
     ],
@@ -1827,6 +1908,7 @@ const PAINTINGS = [
     "id": 94,
     "dateiname": "IMG_8398.jpeg",
     "titel": "Landschaft in Flammen",
+    "groesse": "ca. 61 x 81 cm",
     "motiv_de": [
       "Landschaft",
       "Natur",
@@ -1853,6 +1935,7 @@ const PAINTINGS = [
     "id": 95,
     "dateiname": "IMG_8411.jpeg",
     "titel": "Harlekine in Grün",
+    "groesse": "ca. 61 x 81 cm",
     "motiv_de": [
       "Natur",
       "Menschen",
@@ -1877,6 +1960,7 @@ const PAINTINGS = [
     "id": 96,
     "dateiname": "IMG_8413.jpeg",
     "titel": "Verbindungen",
+    "groesse": "ca. 81.5 x 61.5 cm",
     "motiv_de": [
       "Landschaft",
       "Natur",
@@ -1903,6 +1987,7 @@ const PAINTINGS = [
     "id": 98,
     "dateiname": "IMG_8423.jpeg",
     "titel": "Sonnenenergie",
+    "groesse": "ca. 61.5 x 81 cm",
     "motiv_de": [
       "Abstrakt"
     ],
@@ -1923,6 +2008,7 @@ const PAINTINGS = [
     "id": 100,
     "dateiname": "IMG_8448.jpeg",
     "titel": "Verzweigt",
+    "groesse": "ca. 81 x 61 cm",
     "motiv_de": [
       "Natur",
       "Abstrakt"
@@ -1947,6 +2033,7 @@ const PAINTINGS = [
     "id": 101,
     "dateiname": "IMG_8451.jpeg",
     "titel": "nackter Clown",
+    "groesse": "ca. 81 x 61 cm",
     "motiv_de": [
       "Natur",
       "Menschen",
@@ -1971,6 +2058,7 @@ const PAINTINGS = [
     "id": 102,
     "dateiname": "IMG_8453.jpeg",
     "titel": "9-11",
+    "groesse": "ca. 81 x 61 cm",
     "motiv_de": [
       "Natur",
       "Abstrakt"
@@ -1995,6 +2083,7 @@ const PAINTINGS = [
     "id": 106,
     "dateiname": "IMG_8463.jpeg",
     "titel": "Harlekine in Gelb",
+    "groesse": "ca. 80.5 x 60 cm",
     "motiv_de": [
       "Natur",
       "Abstrakt"
@@ -2017,6 +2106,7 @@ const PAINTINGS = [
     "id": 107,
     "dateiname": "IMG_8464.jpeg",
     "titel": "Am Neusiedlersee",
+    "groesse": "ca. 61.5 x 81 cm",
     "motiv_de": [
       "Landschaft",
       "Natur",
@@ -2043,6 +2133,7 @@ const PAINTINGS = [
     "id": 108,
     "dateiname": "IMG_8471.jpeg",
     "titel": "Akt mit Hut",
+    "groesse": "ca. 75 x 55.5 cm",
     "motiv_de": [
       "Natur",
       "Menschen",
@@ -2069,6 +2160,7 @@ const PAINTINGS = [
     "id": 110,
     "dateiname": "IMG_8483.jpeg",
     "titel": "Maschinen",
+    "groesse": "ca. 76 x 56 cm",
     "motiv_de": [
       "Abstrakt"
     ],
@@ -2091,6 +2183,7 @@ const PAINTINGS = [
     "id": 111,
     "dateiname": "IMG_8488.jpeg",
     "titel": "Tor in Graz",
+    "groesse": "ca. 70 x 50 cm",
     "motiv_de": [
       "Natur",
       "Stadt"
@@ -2113,6 +2206,7 @@ const PAINTINGS = [
     "id": 112,
     "dateiname": "IMG_8489.jpeg",
     "titel": "Verträumt",
+    "groesse": "ca. 60 x 50 cm",
     "motiv_de": [
       "Natur",
       "Menschen",
@@ -2137,6 +2231,7 @@ const PAINTINGS = [
     "id": 113,
     "dateiname": "IMG_8502.jpeg",
     "titel": "Squid",
+    "groesse": "ca. 81 x 61 cm",
     "motiv_de": [
       "Natur",
       "Menschen",
@@ -2163,6 +2258,7 @@ const PAINTINGS = [
     "id": 114,
     "dateiname": "IMG_8505.jpeg",
     "titel": "Figurale Figuren",
+    "groesse": "ca. 81.5 x 61.5 cm",
     "motiv_de": [
       "Menschen",
       "Abstrakt"
@@ -2187,6 +2283,7 @@ const PAINTINGS = [
     "id": 115,
     "dateiname": "IMG_8514.jpeg",
     "titel": "Yellow Lines",
+    "groesse": "ca. 61.5 x 81 cm",
     "motiv_de": [
       "Natur",
       "Abstrakt"
@@ -2209,6 +2306,7 @@ const PAINTINGS = [
     "id": 116,
     "dateiname": "IMG_8518.jpeg",
     "titel": "Harlekine von Hinten",
+    "groesse": "ca. 50 x 40 cm",
     "motiv_de": [
       "Menschen",
       "Akte"
@@ -2233,6 +2331,7 @@ const PAINTINGS = [
     "id": 117,
     "dateiname": "IMG_8519.jpeg",
     "titel": "Frühling",
+    "groesse": "ca. 51 x 71 cm",
     "motiv_de": [
       "Landschaft",
       "Natur"
@@ -2259,6 +2358,7 @@ const PAINTINGS = [
     "id": 118,
     "dateiname": "IMG_8524.jpeg",
     "titel": "Maiskolben",
+    "groesse": "ca. 80 x 60 cm",
     "motiv_de": [
       "Natur"
     ],
@@ -2279,6 +2379,7 @@ const PAINTINGS = [
     "id": 119,
     "dateiname": "IMG_8526.jpeg",
     "titel": "Ayers Rock Phantasy",
+    "groesse": "ca. 60 x 81 cm",
     "motiv_de": [
       "Landschaft"
     ],
@@ -2299,6 +2400,7 @@ const PAINTINGS = [
     "id": 120,
     "dateiname": "IMG_8529.jpeg",
     "titel": "Blaue Tür",
+    "groesse": "ca. 50 x 70 cm",
     "motiv_de": [
       "Stadt"
     ],
@@ -2321,6 +2423,7 @@ const PAINTINGS = [
     "id": 123,
     "dateiname": "IMG_8544.jpeg",
     "titel": "Sporgassen-Türke",
+    "groesse": "ca. 70 x 50 cm",
     "motiv_de": [
       "Menschen"
     ],
@@ -2343,6 +2446,7 @@ const PAINTINGS = [
     "id": 124,
     "dateiname": "IMG_8545.jpeg",
     "titel": "Birkenvorhang",
+    "groesse": "ca. 51.5 x 71.5 cm",
     "motiv_de": [
       "Landschaft",
       "Natur"
@@ -2367,6 +2471,7 @@ const PAINTINGS = [
     "id": 125,
     "dateiname": "IMG_8549.jpeg",
     "titel": "Strandpromenande",
+    "groesse": "ca. 80 x 60 cm",
     "motiv_de": [
       "Natur",
       "Stadt"
@@ -2391,6 +2496,7 @@ const PAINTINGS = [
     "id": 126,
     "dateiname": "IMG_8559.jpeg",
     "titel": "mehr Mais",
+    "groesse": "ca. 80 x 60 cm",
     "motiv_de": [
       "Natur"
     ],
@@ -2413,6 +2519,7 @@ const PAINTINGS = [
     "id": 127,
     "dateiname": "IMG_8565.jpeg",
     "titel": "in Bewegung",
+    "groesse": "ca. 70 x 80 cm",
     "motiv_de": [
       "Abstrakt"
     ],
@@ -2433,6 +2540,7 @@ const PAINTINGS = [
     "id": 128,
     "dateiname": "IMG_8571.jpeg",
     "titel": "Mystic Tree",
+    "groesse": "ca. 50 x 70 cm",
     "motiv_de": [
       "Landschaft",
       "Natur"
@@ -2459,6 +2567,7 @@ const PAINTINGS = [
     "id": 129,
     "dateiname": "IMG_8573.jpeg",
     "titel": "Nächtliche Dächer",
+    "groesse": "ca. 60 x 80 cm",
     "motiv_de": [
       "Stadt",
       "Menschen"
@@ -2483,6 +2592,7 @@ const PAINTINGS = [
     "id": 130,
     "dateiname": "IMG_8576.jpeg",
     "titel": "Steirerland",
+    "groesse": "ca. 50 x 68 cm",
     "motiv_de": [
       "Landschaft",
       "Natur",
@@ -2509,6 +2619,7 @@ const PAINTINGS = [
     "id": 131,
     "dateiname": "IMG_8584.jpeg",
     "titel": "Winter",
+    "groesse": "ca. 50 x 70 cm",
     "motiv_de": [
       "Landschaft",
       "Natur"
@@ -2531,6 +2642,7 @@ const PAINTINGS = [
     "id": 132,
     "dateiname": "IMG_8587.jpeg",
     "titel": "Felsenakt",
+    "groesse": "ca. 57 x 38 cm",
     "motiv_de": [
       "Menschen",
       "Abstrakt"
@@ -2555,6 +2667,7 @@ const PAINTINGS = [
     "id": 133,
     "dateiname": "IMG_8592.jpeg",
     "titel": "Doldenblüte",
+    "groesse": "ca. 40.5 x 30.5 cm",
     "motiv_de": [
       "Natur",
       "Blumen"

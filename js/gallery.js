@@ -28,6 +28,7 @@
   const lightboxOverlay = document.getElementById('lightbox-overlay');
   const lightboxImg     = document.getElementById('lightbox-img');
   const lightboxId      = document.getElementById('lightbox-id');
+  const lightboxSize    = document.getElementById('lightbox-size');
   const lightboxDesc    = document.getElementById('lightbox-desc');
   const lightboxTags    = document.getElementById('lightbox-tags');
   const lightboxClose   = document.getElementById('lightbox-close');
@@ -246,6 +247,13 @@
     lightboxImg.src = `images/${p.dateiname}`;
     lightboxImg.alt = p.titel || `Werk Nr. ${p.id}`;
     lightboxId.textContent = `Werk Nr. ${p.id}${p.titel ? ' — ' + p.titel : ''}`;
+    if (p.groesse) {
+      lightboxSize.textContent = p.groesse;
+      lightboxSize.style.display = '';
+    } else {
+      lightboxSize.textContent = '';
+      lightboxSize.style.display = 'none';
+    }
     lightboxDesc.textContent = p.beschreibung_de || '';
     setHashForPainting(p);
 
