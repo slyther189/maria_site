@@ -132,6 +132,7 @@
   (p.motiv_en    || []).join(' '),
   (p.technik_de  || []).join(' '),
   (p.technik_en  || []).join(' '),
+  (p.schlagworte || []).join(' '),
   p.titel || '',
 ].join(' ').toLowerCase();
         if (!searchable.includes(q)) return false;

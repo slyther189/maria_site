@@ -13,6 +13,11 @@
          Mischtechnik/Mixed media, Aquarell/Watercolour, Acryl/Acrylic, Öl/Oil,
          Leinwand/Canvas, Druck/Print, Tusche/Ink, Linolschnitt/Linocut, Monotypie/Monotype
      beschreibung_de / beschreibung_en — short (8-9 word) descriptions
+     schlagworte — OPTIONAL. Extra search-only keywords for a specific painting,
+       not shown anywhere on the page and not part of the motiv/technik pill
+       taxonomies above. Used sparingly for one-off terms a visitor might
+       search for that don't fit the fixed categories (e.g. "Roboter" for
+       painting #36, "Automatische Welt").
      sichtbar — true for all entries here
 
    HIDDEN_PAINTINGS (23): unchanged from the previous pass, still using the
@@ -748,6 +753,10 @@ const PAINTINGS = [
     ],
     "beschreibung_de": "Satirisches Narrativbild über Automatisierung und menschliche Entfremdung heute.",
     "beschreibung_en": "Satirical narrative on automation and modern human alienation.",
+    "schlagworte": [
+      "Roboter",
+      "Robot"
+    ],
     "sichtbar": true
   },
   {
