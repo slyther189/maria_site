@@ -255,7 +255,7 @@
       lightboxSize.textContent = '';
       lightboxSize.style.display = 'none';
     }
-    lightboxDesc.textContent = p.beschreibung_de || '';
+    lightboxDesc.textContent = '';
     setHashForPainting(p);
 
     // Tags
@@ -281,9 +281,7 @@
   }
 
   function buildShareText(p) {
-    const title = p.titel || `Werk Nr. ${p.id}`;
-    const desc  = p.beschreibung_de || '';
-    return [title, desc].filter(Boolean).join('\n\n');
+    return p.titel || `Werk Nr. ${p.id}`;
   }
 
   function copyToClipboard(text) {
